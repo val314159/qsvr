@@ -1,0 +1,9 @@
+
+# python stuff
+*.pyc
+*.pyo
+
+# emacs stuff
+*~
+.\#*
+\#*
