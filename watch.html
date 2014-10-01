@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8" />
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js "></script>
+<script>
+  $(document).ready(function() {
+	var es = new EventSource("stream");
+	es.onmessage = function (e) {
+		$("#log").html($("#log").html()
+			+ "<p>Event: "+e.lastEventId+"::"+e.type+", data: "+e.data+"</p>");
+	};
+        es.addEventListener('xmessage', function(e){
+		$("#log").html($("#log").html()
+			+ "<p>Event: "+e.lastEventId+"::"+e.type+", data: "+e.data+"</p>");
+        }, false);
+})</script></head><body>
+  <div id="log" style="font-family: courier; font-size: 0.75em;"></div>
+</body></html>
