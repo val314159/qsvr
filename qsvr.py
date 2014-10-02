@@ -85,4 +85,4 @@ def stream2():
         arr.append('\n')
         yield '\n'.join(arr)
 
-if __name__=='__main__':bottle.run(server='gevent',port=E['PORT'],debug=True)
+if __name__=='__main__':bottle.run(server='gevent',host='',port=E['PORT'],debug=True)
